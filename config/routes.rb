@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+
+  resources :channels, only: [:new, :create]
+  resources :shows, except: [:index, :destroy]
+  resources :show_listings, only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
